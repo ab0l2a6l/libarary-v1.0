@@ -25,12 +25,13 @@ public class Main {
 
                     System.out.println("نام کتاب را وارد کنید: ");
                     book.setBookName(input.nextLine());
+
                     System.out.println("نام نویسنده را وارد کنید: ");
                     book.setAuthor(input.nextLine());
+
                     System.out.println("ژانر کتاب را انتخاب کنید:(1.درام 2.تاریخی 3.علمی) ");
                     temp = input.nextByte();
                     input.nextLine();
-
                     try {
                         Exceptions.validateGenre(temp);
                         if (temp == 1)
@@ -59,12 +60,16 @@ public class Main {
 
                     System.out.print("نام: ");
                     person.setfName(input.nextLine());
+
                     System.out.print("نام خانوادگی: ");
                     person.setlName(input.nextLine());
+
                     System.out.print("کد ملی: ");
                     person.setId(input.nextInt());
+
                     System.out.print("سن: ");
                     person.setAge(input.nextByte());
+
                     System.out.print("جنسیت عدد مورد نظر را انتخاب کنید(1.مرد 2.زن): ");
                     temp = input.nextInt();
                     try {
@@ -77,6 +82,7 @@ public class Main {
                         System.out.println(e.getMessage());
                         break;
                     }
+
                     System.out.println("1.کتابدار\n2.مشتری");
                     temp = input.nextInt();
                     try {
@@ -86,6 +92,7 @@ public class Main {
                         System.out.println(e.getMessage());
                         break;
                     }
+
                     people.add(person);
 
                 }
