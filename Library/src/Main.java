@@ -30,16 +30,12 @@ public class Main {
 
             switch (num) {
                 case 1 -> {
-
-                    int booksIndex = 0;
-                    String bookName;
-                    String author;
-                    int bookId;
+                    Book book = new Book();
 
                     System.out.println("نام کتاب را وارد کنید: ");
-                    bookName = input.nextLine();
+                    book.setBookName(input.nextLine());
                     System.out.println("نام نویسنده را وارد کنید: ");
-                    author = input.nextLine();
+                    book.setAuthor(input.nextLine());
                     System.out.println("ژانر کتاب را انتخاب کنید:(1.درام 2.تاریخی 3.علمی) ");
                     temp = input.nextByte();
                     input.nextLine();
@@ -47,11 +43,11 @@ public class Main {
                     try {
                         Exceptions.validateGenre(temp);
                         if (temp == 1)
-                            genre = Genre.DRAM;
+                            book.setGenre(Genre.DRAM);
                         else if (temp == 2)
-                            genre = Genre.HISTORICAL;
+                            book.setGenre(Genre.HISTORICAL);
                         else if (temp == 3)
-                            genre = Genre.SCIENCE;
+                            book.setGenre(Genre.SCIENCE);
                     } catch (Exception e) // age temp 1 ya 2 ya 3 nabod exception part kon
                     {
                         System.out.println(e.getMessage());
@@ -59,20 +55,13 @@ public class Main {
                     }
 
                     System.out.println("آیدی کتاب را وارد کنید: ");
-                    bookId = input.nextInt();
+                    book.setBookId(input.nextInt());
                     input.nextLine();
 
-                    Book book = new Book();
-                    book.setBookName(bookName);
-                    book.setBookId(bookId);
-                    if (genre != null) {
-                        book.setGenre(genre);
-                    }
-                    book.setAuthor(author);
                     books.add(book);
 
-                    System.out.println("کتاب " + bookName + " با آیدی " + bookId
-                            + " با ژانر  " + genre + " ثبت شد. ");
+                    System.out.println("کتاب " + book.getBookName() + " با آیدی " + book.getBookId()
+                            + " با ژانر  " + book.getGenre() + " ثبت شد. ");
                 }
                 case 2 -> {
 
