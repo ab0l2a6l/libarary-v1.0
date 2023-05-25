@@ -1,17 +1,9 @@
-public class Person {
-    private String fName;
+public class Person extends Entity{
     private String lName;
     private byte age;
-    private int id;
     private Sexuality sexuality;
 
-    public String getfName() {
-        return fName;
-    }
 
-    public void setfName(String fName) {
-        this.fName = fName;
-    }
 
     public String getlName() {
         return lName;
@@ -29,13 +21,6 @@ public class Person {
         this.age = age;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Sexuality getSexuality() {
         return sexuality;

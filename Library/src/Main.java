@@ -23,7 +23,7 @@ public class Main {
                     Book book = new Book();
 
                     System.out.println("نام کتاب را وارد کنید: ");
-                    book.setBookName(input.nextLine());
+                    book.setName(input.nextLine());
 
                     System.out.println("نام نویسنده را وارد کنید: ");
                     book.setAuthor(input.nextLine());
@@ -46,19 +46,19 @@ public class Main {
                     }
 
                     System.out.println("آیدی کتاب را وارد کنید: ");
-                    book.setBookId(input.nextInt());
+                    book.setId(input.nextInt());
                     input.nextLine();
 
                     books.add(book);
 
-                    System.out.println("کتاب " + book.getBookName() + " با آیدی " + book.getBookId()
+                    System.out.println("کتاب " + book.getName() + " با آیدی " + book.getId()
                             + " با ژانر  " + book.getGenre() + " ثبت شد. ");
                 }
                 case 2 -> {
                     Person person = new Person();
 
                     System.out.print("نام: ");
-                    person.setfName(input.nextLine());
+                    person.setName(input.nextLine());
 
                     System.out.print("نام خانوادگی: ");
                     person.setlName(input.nextLine());
