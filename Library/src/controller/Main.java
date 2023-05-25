@@ -9,13 +9,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int num;
+        int userRequestForPersonOrBook;
         InterfaceDAO interfaceDAO;
 
         for (; ; ) {
-            num = checkWhatUserWants();
+            userRequestForPersonOrBook = checkWhatUserWants();
 
-            switch (num) {
+            switch (userRequestForPersonOrBook) {
                 case 1 -> {
                     interfaceDAO = new BookDAO();
                     interfaceDAO.save();
