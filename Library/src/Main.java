@@ -10,10 +10,6 @@ public class Main {
         int temp;
 
         List<Book> books = new ArrayList<>();
-        int booksIndex = 0;
-        String bookName;
-        String author;
-        int bookId;
 
 
         //person detail
@@ -34,6 +30,11 @@ public class Main {
 
             switch (num) {
                 case 1 -> {
+
+                    int booksIndex = 0;
+                    String bookName;
+                    String author;
+                    int bookId;
 
                     System.out.println("نام کتاب را وارد کنید: ");
                     bookName = input.nextLine();
