@@ -44,7 +44,7 @@ public class Main {
                     input.nextLine();
 
                     try {
-                        Exceptions.validGenre(temp);
+                        Exceptions.validateGenre(temp);
                         if (temp == 1)
                             genre = Genre.DRAM;
                         else if (temp == 2)
@@ -86,7 +86,7 @@ public class Main {
                     input.nextLine();
 
                     try {
-                        Exceptions.validSexuality(temp);
+                        Exceptions.validateSexuality(temp);
                         if (temp == 1)
                             sexuality = Sexuality.MALE;
                         else if (temp == 2)
