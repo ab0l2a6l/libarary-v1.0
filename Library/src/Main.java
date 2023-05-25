@@ -10,16 +10,7 @@ public class Main {
         int temp;
 
         List<Book> books = new ArrayList<>();
-
-
-        //person detail
         List<Person> people = new ArrayList<>();
-        int peopleIndex = 0;
-        String FName;
-        String LName;
-        byte age;
-        int personId;
-        Sexuality sexuality = Sexuality.MALE;
 
         for (; ; ) {
             System.out.println("1.ثبت کتاب");
@@ -64,32 +55,30 @@ public class Main {
                             + " با ژانر  " + book.getGenre() + " ثبت شد. ");
                 }
                 case 2 -> {
+                    Person person = new Person();
 
                     System.out.print("نام: ");
-                    FName = input.nextLine();
+                    person.setfName(input.nextLine());
                     System.out.print("نام خانوادگی: ");
-                    LName = input.nextLine();
+                    person.setlName(input.nextLine());
                     System.out.print("کد ملی: ");
-                    personId = input.nextInt();
+                    person.setId(input.nextInt());
                     System.out.print("سن: ");
-                    age = input.nextByte();
+                    person.setAge(input.nextByte());
                     System.out.print("جنسیت عدد مورد نظر را انتخاب کنید(1.مرد 2.زن): ");
                     temp = input.nextInt();
-                    input.nextLine();
-
                     try {
                         Exceptions.validateSexuality(temp);
                         if (temp == 1)
-                            sexuality = Sexuality.MALE;
+                            person.setSexuality(Sexuality.MALE);
                         else if (temp == 2)
-                            sexuality = Sexuality.FEMALE;
+                            person.setSexuality(Sexuality.FEMALE);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                         break;
                     }
                     System.out.println("1.کتابدار\n2.مشتری");
                     temp = input.nextInt();
-
                     try {
                         Exceptions.isKetabdar(temp);
                         System.out.println("اطلاعات شما ثبت شد.");
@@ -97,13 +86,6 @@ public class Main {
                         System.out.println(e.getMessage());
                         break;
                     }
-
-                    Person person = new Person();
-                    person.setfName(FName);
-                    person.setlName(LName);
-                    person.setId(personId);
-                    person.setAge(age);
-                    person.setSexuality(sexuality);
                     people.add(person);
 
                 }
