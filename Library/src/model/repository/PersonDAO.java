@@ -1,5 +1,6 @@
 package model.repository;
 
+import common.StaticProvider;
 import model.entity.Person;
 import model.entity.Sexuality;
 import model.exceptions.Exceptions;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 public class PersonDAO implements InterfaceDAO {
     @Override
     public void save() {
-        Scanner input = new Scanner(System.in);
+        Scanner input = StaticProvider.provideScanner();
         Person person = new Person();
         List<Person> people = new ArrayList<>();
 

@@ -1,5 +1,6 @@
 package model.repository;
 
+import common.StaticProvider;
 import model.entity.Book;
 import model.entity.Genre;
 import model.exceptions.Exceptions;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 public class BookDAO implements InterfaceDAO {
     @Override
     public void save() {
-        Scanner input = new Scanner(System.in);
+        Scanner input = StaticProvider.provideScanner();
 
         List<Book> books = new ArrayList<>();
         Book book = new Book();

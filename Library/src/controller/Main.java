@@ -1,21 +1,15 @@
 package controller;
 
-import model.entity.Book;
-import model.entity.Genre;
-import model.entity.Person;
-import model.entity.Sexuality;
-import model.exceptions.Exceptions;
+import common.StaticProvider;
 import model.repository.BookDAO;
 import model.repository.InterfaceDAO;
 import model.repository.PersonDAO;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner input = StaticProvider.provideScanner();
         int num;
         InterfaceDAO interfaceDAO;
 
