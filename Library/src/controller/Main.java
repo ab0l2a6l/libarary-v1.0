@@ -9,16 +9,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = StaticProvider.provideScanner();
         int num;
         InterfaceDAO interfaceDAO;
 
         for (; ; ) {
-            System.out.println("1.ثبت کتاب");
-            System.out.println("2.ثبت اشخاص");
-            System.out.println("3.خروج");
-            num = input.nextInt();
-            input.nextLine();
+            num = checkWhatUserWants();
 
             switch (num) {
                 case 1 -> {
@@ -37,5 +32,16 @@ public class Main {
                 default -> System.out.println("عدد انتخابی اشتباه است دوباره تلاش کنید!!!");
             }
         }
+    }
+
+    private static int checkWhatUserWants() {
+        Scanner input = StaticProvider.provideScanner();
+        int num;
+        System.out.println("1.ثبت کتاب");
+        System.out.println("2.ثبت اشخاص");
+        System.out.println("3.خروج");
+        num = input.nextInt();
+        input.nextLine();
+        return num;
     }
 }
