@@ -1,4 +1,4 @@
-public enum Genre  {
+public enum Genre {
     DRAM,
     HISTORICAL,
     SCIENCE

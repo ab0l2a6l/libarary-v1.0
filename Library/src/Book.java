@@ -23,12 +23,15 @@ public class Book {
     public int getBookId() {
         return bookId;
     }
+
     public Genre getGenre() {
         return genre;
     }
+
     public String getAuthor() {
         return author;
     }
+
     public String getBookName() {
         return bookName;
     }

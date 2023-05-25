@@ -23,36 +23,35 @@ public class Main {
         String LName;
         byte age;
         int personId;
-        Sexuality sexuality=Sexuality.MALE;
+        Sexuality sexuality = Sexuality.MALE;
 
-        for (;;)
-        {
+        for (; ; ) {
             System.out.println("1.ثبت کتاب");
             System.out.println("2.ثبت اشخاص");
             System.out.println("3.خروج");
-            num=input.nextInt();
+            num = input.nextInt();
             input.nextLine();
 
-            switch (num){
-                case 1 ->{
+            switch (num) {
+                case 1 -> {
 
                     System.out.println("نام کتاب را وارد کنید: ");
-                    bookName= input.nextLine();
+                    bookName = input.nextLine();
                     System.out.println("نام نویسنده را وارد کنید: ");
-                    author=input.nextLine();
+                    author = input.nextLine();
                     System.out.println("ژانر کتاب را انتخاب کنید:(1.درام 2.تاریخی 3.علمی) ");
-                    temp=input.nextByte();
+                    temp = input.nextByte();
                     input.nextLine();
 
                     try {
                         Exceptions.validGenre(temp);
-                        if(temp == 1)
-                            genre=Genre.DRAM;
+                        if (temp == 1)
+                            genre = Genre.DRAM;
                         else if (temp == 2)
-                            genre=Genre.HISTORICAL;
+                            genre = Genre.HISTORICAL;
                         else if (temp == 3)
-                            genre=Genre.SCIENCE;
-                    }catch (Exception e) // age temp 1 ya 2 ya 3 nabod exception part kon
+                            genre = Genre.SCIENCE;
+                    } catch (Exception e) // age temp 1 ya 2 ya 3 nabod exception part kon
                     {
                         System.out.println(e.getMessage());
                         break;
@@ -62,63 +61,61 @@ public class Main {
                     bookId = input.nextInt();
                     input.nextLine();
 
-                    Book book =new Book();
+                    Book book = new Book();
                     book.setBookName(bookName);
                     book.setBookId(bookId);
                     book.setGenre(genre);
                     book.setAuthor(author);
-                    books[booksIndex++]=book;
+                    books[booksIndex++] = book;
 
-                    System.out.println("کتاب " + bookName +" با آیدی " + bookId
-                            + " با ژانر  "+ genre + " ثبت شد. ");
+                    System.out.println("کتاب " + bookName + " با آیدی " + bookId
+                            + " با ژانر  " + genre + " ثبت شد. ");
                 }
-                case 2->{
+                case 2 -> {
 
                     System.out.print("نام: ");
-                    FName=input.nextLine();
+                    FName = input.nextLine();
                     System.out.print("نام خانوادگی: ");
-                    LName=input.nextLine();
+                    LName = input.nextLine();
                     System.out.print("کد ملی: ");
-                    personId=input.nextInt();
+                    personId = input.nextInt();
                     System.out.print("سن: ");
-                    age=input.nextByte();
+                    age = input.nextByte();
                     System.out.print("جنسیت عدد مورد نظر را انتخاب کنید(1.مرد 2.زن): ");
-                    temp=input.nextInt();
+                    temp = input.nextInt();
                     input.nextLine();
 
                     try {
                         Exceptions.validSexuality(temp);
-                        if (temp ==1 )
-                            sexuality= Sexuality.MALE;
-                        else if(temp ==2)
-                            sexuality=Sexuality.FEMALE;
-                    }catch (Exception e)
-                    {
+                        if (temp == 1)
+                            sexuality = Sexuality.MALE;
+                        else if (temp == 2)
+                            sexuality = Sexuality.FEMALE;
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                         break;
                     }
                     System.out.println("1.کتابدار\n2.مشتری");
-                    temp=input.nextInt();
+                    temp = input.nextInt();
 
-                    try
-                    {
+                    try {
                         Exceptions.isKetabdar(temp);
                         System.out.println("اطلاعات شما ثبت شد.");
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                         break;
                     }
 
-                    Person person=new Person();
+                    Person person = new Person();
                     person.setfName(FName);
                     person.setlName(LName);
                     person.setId(personId);
                     person.setAge(age);
                     person.setSexuality(sexuality);
-                    people[peopleIndex++]=person;
+                    people[peopleIndex++] = person;
 
                 }
-                case 3->{
+                case 3 -> {
                     return;
                 }
                 default -> System.out.println("عدد انتخابی اشتباه است دوباره تلاش کنید!!!");
