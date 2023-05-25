@@ -14,7 +14,7 @@ public class Main {
         String bookName;
         String author;
         int bookId;
-        Genre genre = Genre.DRAM;
+        Genre genre;
 
         //person detail
         List<Person> people = new ArrayList<>();
