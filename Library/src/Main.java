@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -7,9 +9,7 @@ public class Main {
         int num;
         int temp;
 
-        // book detail
-//        List<Book> books = new ArrayList<>();
-        Book[] books = new Book[10];
+        List<Book> books = new ArrayList<>();
         int booksIndex = 0;
         String bookName;
         String author;
@@ -17,7 +17,7 @@ public class Main {
         Genre genre = Genre.DRAM;
 
         //person detail
-        Person[] people = new Person[10];
+        List<Person> people = new ArrayList<>();
         int peopleIndex = 0;
         String FName;
         String LName;
@@ -66,7 +66,7 @@ public class Main {
                     book.setBookId(bookId);
                     book.setGenre(genre);
                     book.setAuthor(author);
-                    books[booksIndex++] = book;
+                    books.add(book);
 
                     System.out.println("کتاب " + bookName + " با آیدی " + bookId
                             + " با ژانر  " + genre + " ثبت شد. ");
@@ -112,7 +112,7 @@ public class Main {
                     person.setId(personId);
                     person.setAge(age);
                     person.setSexuality(sexuality);
-                    people[peopleIndex++] = person;
+                    people.add(person);
 
                 }
                 case 3 -> {
