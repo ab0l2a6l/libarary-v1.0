@@ -3,20 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-        int num , temp;
+        //mamoolan intori nist. mamoolan har variable joda tarif mishe:
+        int num;
+        int temp;
 
         // book detail
-        Book []books=new Book[10];
-        int booksIndex=0;
-        String bookName , author ;
+//        List<Book> books = new ArrayList<>();
+        Book[] books = new Book[10];
+        int booksIndex = 0;
+        String bookName;
+        String author;
         int bookId;
-        Genre genre=Genre.DRAM;
+        Genre genre = Genre.DRAM;
 
         //person detail
-        Person []people=new Person[10];
-        int peopleIndex=0;
-        String FName , LName ;
+        Person[] people = new Person[10];
+        int peopleIndex = 0;
+        String FName;
+        String LName;
         byte age;
         int personId;
         Sexuality sexuality=Sexuality.MALE;
@@ -106,8 +110,8 @@ public class Main {
                     }
 
                     Person person=new Person();
-                    person.setFName(FName);
-                    person.setLName(LName);
+                    person.setfName(FName);
+                    person.setlName(LName);
                     person.setId(personId);
                     person.setAge(age);
                     person.setSexuality(sexuality);

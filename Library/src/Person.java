@@ -1,24 +1,24 @@
 public class Person {
-    private String FName;
-    private String LName;
+    private String fName;
+    private String lName;
     private byte age;
     private int id;
     private Sexuality sexuality;
 
-    public String getFName() {
-        return FName;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFName(String FName) {
-        this.FName = FName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLName() {
-        return LName;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLName(String LName) {
-        this.LName = LName;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public byte getAge() {
