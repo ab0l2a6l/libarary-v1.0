@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        //mamoolan intori nist. mamoolan har variable joda tarif mishe:
         int num;
         int temp;
 
