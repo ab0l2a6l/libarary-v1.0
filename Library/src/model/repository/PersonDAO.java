@@ -37,7 +37,7 @@ public class PersonDAO implements InterfaceDAO {
                 person.setSexuality(Sexuality.FEMALE);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            break;
+
         }
 
         System.out.println("1.کتابدار\n2.مشتری");
