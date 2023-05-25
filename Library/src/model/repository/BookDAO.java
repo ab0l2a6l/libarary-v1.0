@@ -10,19 +10,35 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BookDAO implements InterfaceDAO {
+    Scanner input = StaticProvider.provideScanner();
+    List<Book> books = new ArrayList<>();
+    Book book = new Book();
     @Override
     public void save() {
-        Scanner input = StaticProvider.provideScanner();
+        getBookNameFromUser();
+        getAuthorFromUser();
+        getGenreFromUser();
+        getIdFromUser();
+        saveToList();
+        printResult();
+    }
 
-        List<Book> books = new ArrayList<>();
-        Book book = new Book();
+    private void saveToList() {
+        books.add(book);
+    }
 
-        System.out.println("نام کتاب را وارد کنید: ");
-        book.setName(input.nextLine());
+    private void printResult() {
+        System.out.println("کتاب " + book.getName() + " با آیدی " + book.getId()
+                + " با ژانر  " + book.getGenre() + " ثبت شد. ");
+    }
 
-        System.out.println("نام نویسنده را وارد کنید: ");
-        book.setAuthor(input.nextLine());
+    private void getIdFromUser() {
+        System.out.println("آیدی کتاب را وارد کنید: ");
+        book.setId(input.nextInt());
+        input.nextLine();
+    }
 
+    private void getGenreFromUser() {
         System.out.println("ژانر کتاب را انتخاب کنید:(1.درام 2.تاریخی 3.علمی) ");
         int temp = input.nextByte();
         input.nextLine();
@@ -39,14 +55,15 @@ public class BookDAO implements InterfaceDAO {
             System.out.println(e.getMessage());
 
         }
+    }
 
-        System.out.println("آیدی کتاب را وارد کنید: ");
-        book.setId(input.nextInt());
-        input.nextLine();
+    private void getAuthorFromUser() {
+        System.out.println("نام نویسنده را وارد کنید: ");
+        book.setAuthor(input.nextLine());
+    }
 
-        books.add(book);
-
-        System.out.println("کتاب " + book.getName() + " با آیدی " + book.getId()
-                + " با ژانر  " + book.getGenre() + " ثبت شد. ");
+    private void getBookNameFromUser() {
+        System.out.println("نام کتاب را وارد کنید: ");
+        book.setName(input.nextLine());
     }
 }

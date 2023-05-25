@@ -10,24 +10,37 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PersonDAO implements InterfaceDAO {
+    Scanner input = StaticProvider.provideScanner();
+    Person person = new Person();
+    List<Person> people = new ArrayList<>();
     @Override
     public void save() {
-        Scanner input = StaticProvider.provideScanner();
-        Person person = new Person();
-        List<Person> people = new ArrayList<>();
+        getPersonNameFromUser();
+        getLastNameFromUser();
+        getIdFromUser();
+        getAgeFromUser();
+        getGenderFromUser();
+        getRoleFromUser();
+        persistPersonToList();
+    }
 
-        System.out.print("نام: ");
-        person.setName(input.nextLine());
+    private void persistPersonToList() {
+        people.add(person);
+    }
 
-        System.out.print("نام خانوادگی: ");
-        person.setlName(input.nextLine());
+    private void getRoleFromUser() {
+        System.out.println("1.کتابدار\n2.مشتری");
+        int temp = input.nextInt();
+        try {
+            Exceptions.isKetabdar(temp);
+            System.out.println("اطلاعات شما ثبت شد.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
 
-        System.out.print("کد ملی: ");
-        person.setId(input.nextInt());
+        }
+    }
 
-        System.out.print("سن: ");
-        person.setAge(input.nextByte());
-
+    private void getGenderFromUser() {
         System.out.print("جنسیت عدد مورد نظر را انتخاب کنید(1.مرد 2.زن): ");
         int temp = input.nextInt();
         try {
@@ -40,18 +53,25 @@ public class PersonDAO implements InterfaceDAO {
             System.out.println(e.getMessage());
 
         }
+    }
 
-        System.out.println("1.کتابدار\n2.مشتری");
-        temp = input.nextInt();
-        try {
-            Exceptions.isKetabdar(temp);
-            System.out.println("اطلاعات شما ثبت شد.");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    private void getAgeFromUser() {
+        System.out.print("سن: ");
+        person.setAge(input.nextByte());
+    }
 
-        }
+    private void getIdFromUser() {
+        System.out.print("کد ملی: ");
+        person.setId(input.nextInt());
+    }
 
-        people.add(person);
+    private void getLastNameFromUser() {
+        System.out.print("نام خانوادگی: ");
+        person.setlName(input.nextLine());
+    }
 
+    private void getPersonNameFromUser() {
+        System.out.print("نام: ");
+        person.setName(input.nextLine());
     }
 }
