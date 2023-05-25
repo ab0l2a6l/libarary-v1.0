@@ -14,7 +14,7 @@ public class Main {
         String bookName;
         String author;
         int bookId;
-        Genre genre;
+
 
         //person detail
         List<Person> people = new ArrayList<>();
@@ -64,7 +64,9 @@ public class Main {
                     Book book = new Book();
                     book.setBookName(bookName);
                     book.setBookId(bookId);
-                    book.setGenre(genre);
+                    if (genre != null) {
+                        book.setGenre(genre);
+                    }
                     book.setAuthor(author);
                     books.add(book);
 
